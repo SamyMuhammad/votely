@@ -10,8 +10,25 @@ module.exports = {
 
     theme: {
         extend: {
+            colors: ({ colors }) => ({
+                current: colors.current,
+                transparent: colors.transparent,
+                black: colors.black,
+                white: colors.white,
+                gray: colors.gray,
+                'gray-background' : '#f7f8fc',
+                'custom-blue': '#328af1',
+                'custom-blue-hover': '#2879bd',
+                'custom-yellow' : '#ffc73c',
+                'custom-red' : '#ec454f',
+                'custom-green' : '#1aab8b',
+                'custom-purple' : '#8b60ed',
+            }),
+            maxWidth: {
+                thousandPixel: '62.5rem', /* 1000px */
+            },
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
             },
         },
     },
