@@ -25,4 +25,32 @@
             </div>
         </div>
     </div> <!-- end:filters -->
+
+    <div class="ideas-container space-y-6 my-6">
+        <div class="idea-container bg-white rounded-xl flex">
+            <div class="border-r boreder-gray-100 px-5 py-8">
+                <div class="text-center">
+                    <div class="font-semibold text-2xl">12</div>
+                    <div class="text-gray-500">Votes</div>
+                </div>
+
+                <div class="mt-5">
+                    <button class="w-full font-bold text-xxs bg-gray-200 border-2 border-gray-200 hover:border-gray-400 transition duration-150 ease-in
+                     rounded-xl px-4 py-3 uppercase">vote</button>
+                </div>
+            </div>
+
+            <div class="flex px-2 py-6">
+                <a href="#" class="flex-none">
+                    <img src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="avatar" class="rounded-xl w-14 h-14">
+                </a>
+                <div class="mx-4">
+                    <h4 class="text-xl font-semibld">
+                        <a href="#" class="hover:underline">A rondom title goes here</a>
+                    </h4>
+                    <div class="text-gray-600 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, sed natus. Illum modi eligendi voluptatibus officia unde provident. Earum, voluptatem cumque, voluptate neque, aut provident dolores necessitatibus fugiat pariatur nisi consequatur rerum voluptatum. Maiores quasi tempore dignissimos. Animi consectetur, obcaecati in explicabo recusandae ut pariatur deserunt voluptas similique nam minus odit, facilis, assumenda voluptatibus laboriosam a maiores non vero itaque voluptatum. Exercitationem voluptatem consequatur est ratione architecto in repellat dignissimos, ut vitae temporibus incidunt enim autem debitis asperiores maiores qui dolorem laudantium fuga nisi atque, mollitia suscipit perspiciatis ipsa provident. Aliquid provident similique laudantium odit dolorem et libero sunt sequi!</div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end ideas container -->
 </x-app-layout>
