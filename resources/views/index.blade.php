@@ -49,6 +49,23 @@
                         <a href="#" class="hover:underline">A rondom title goes here</a>
                     </h4>
                     <div class="text-gray-600 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, sed natus. Illum modi eligendi voluptatibus officia unde provident. Earum, voluptatem cumque, voluptate neque, aut provident dolores necessitatibus fugiat pariatur nisi consequatur rerum voluptatum. Maiores quasi tempore dignissimos. Animi consectetur, obcaecati in explicabo recusandae ut pariatur deserunt voluptas similique nam minus odit, facilis, assumenda voluptatibus laboriosam a maiores non vero itaque voluptatum. Exercitationem voluptatem consequatur est ratione architecto in repellat dignissimos, ut vitae temporibus incidunt enim autem debitis asperiores maiores qui dolorem laudantium fuga nisi atque, mollitia suscipit perspiciatis ipsa provident. Aliquid provident similique laudantium odit dolorem et libero sunt sequi!</div>
+                    <div class="flex items-center justify-between mt-4">
+                        <div class="flex items-center justify-between space-x-2 text-xs font-semibold text-gray-400">
+                            <span>10 hours ago</span>
+                            <span>&bullet;</span>
+                            <span>Category</span>
+                            <span>&bullet;</span>
+                            <span class="text-gray-900">3 Comments</span>
+                        </div>
+
+                        <div class="flex items-center justify-between space-x-2">
+                            <div class="uppercase font-bold bg-gray-200 text-center text-xxs leading-none w-28 h-7 rounded-full py-2 px-4">open</div>
+                            <button type="button" class="font-bold bg-gray-100 hover:bg-gray-200 transition duration-150 ease-in text-center text-sm leading-none h-7 rounded-full py-2 px-4">
+                                <svg fill="currentColor" width="24" height="6"><path d="M2.97.061A2.969 2.969 0 000 3.031 2.968 2.968 0 002.97 6a2.97 2.97 0 100-5.94zm9.184 0a2.97 2.97 0 100 5.939 2.97 2.97 0 100-5.939zm8.877 0a2.97 2.97 0 10-.003 5.94A2.97 2.97 0 0021.03.06z" style="color: rgba(163, 163, 163, .5)">
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
