@@ -25,7 +25,7 @@ module.exports = {
                 'custom-purple' : '#8b60ed',
             }),
             maxWidth: {
-                thousandPixel: '62.5rem', /* 1000px */
+                custom: '68.5rem',
             },
             fontFamily: {
                 sans: ['Open Sans', ...defaultTheme.fontFamily.sans],

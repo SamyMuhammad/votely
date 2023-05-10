@@ -50,7 +50,7 @@
             </div>
         </header>
 
-        <main class="container mx-auto max-w-thousandPixel flex">
+        <main class="container mx-auto max-w-custom flex">
             <div class="w-[280px] mr-5">
                 <div class="border-2 border-blue rounded-xl mt-16 bg-white">
                     <div class="text-center pt-5 py-6">
