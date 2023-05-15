@@ -46,15 +46,15 @@
                                 </svg>
 
                                 <!-- menu -->
-                                {{-- <ul
-                                    class="absolute w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8">
+                                <ul
+                                    class="hidden absolute w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8">
                                     <li><a href="#"
                                             class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item
                                             1</a></li>
                                     <li><a href="#"
                                             class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item
                                             1</a></li>
-                                </ul> --}}
+                                </ul>
                             </button>
                         </div>
                     </div>
@@ -81,11 +81,17 @@
             </div>
 
             <!-- TODO -->
-            <div class="flex items-center space-x-4">
-                <div class="w-4 h-6 text-center bg-white p-8">
-                    <div>12</div>
-                    <div>Votes</div>
+            <div class="flex items-center space-x-3">
+                <div class="bg-white text-center font-semibold rounded-xl px-3 py-2">
+                    <div class="text-xl leading-snug">12</div>
+                    <div class="text-xs text-gray-400 leading-none">Votes</div>
                 </div>
+
+                <button type="button" class="w-32 h-11 text-xs bg-gray-200
+                    font-semibold rounded-xl border border-gray-200 hover:border-gray-400
+                    transition duration-150 ease-in px-6 py-3">
+                    <span class="ml-1 uppercase">Vote</span>
+                </button>
             </div>
         </div> <!-- end:buttons-container -->
     </div>
