@@ -60,16 +60,28 @@
                             <span class="text-gray-900">3 Comments</span>
                         </div>
 
-                        <div class="flex items-center justify-between space-x-2">
+                        <div
+                            x-data="{ isOpened: false }"
+                            class="flex items-center justify-between space-x-2"
+                            >
                             <div class="uppercase font-bold bg-gray-200 text-center text-xxs leading-none w-28 h-7 rounded-full py-2 px-4">open</div>
-                            <button type="button" class="relative font-bold bg-gray-100 hover:bg-gray-200 transition duration-150 ease-in text-center text-sm leading-none h-7 rounded-full border py-2 px-4">
+                            <button 
+                                @click="isOpened = !isOpened"
+                                type="button" class="relative font-bold bg-gray-100 hover:bg-gray-200 transition duration-150 ease-in text-center text-sm leading-none h-7 rounded-full border py-2 px-4"
+                                >
                                 <svg fill="currentColor" width="24" height="6"><path d="M2.97.061A2.969 2.969 0 000 3.031 2.968 2.968 0 002.97 6a2.97 2.97 0 100-5.94zm9.184 0a2.97 2.97 0 100 5.939 2.97 2.97 0 100-5.939zm8.877 0a2.97 2.97 0 10-.003 5.94A2.97 2.97 0 0021.03.06z" style="color: rgba(163, 163, 163, .5)">
                                 </svg>
 
                                 <!-- menu -->
-                                <ul class="absolute w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8">
-                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item 1</a></li>
-                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item 1</a></li>
+                                <ul
+                                    x-cloak
+                                    x-show="isOpened" x-transition.origin.top.left.duration.500ms
+                                    @click.away="isOpened = false"
+                                    @keydown.escape.window="isOpened = false"
+                                    class="absolute w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8"
+                                    >
+                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Mark as Spam</a></li>
+                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Delete Post</a></li>
                                 </ul>
                             </button>
                         </div>
@@ -117,8 +129,8 @@
 
                                 <!-- menu -->
                                 <ul class="absolute w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8">
-                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item 1</a></li>
-                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item 1</a></li>
+                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Mark as Spam</a></li>
+                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Delete Post</a></li>
                                 </ul>
                             </button>
                         </div>
@@ -166,8 +178,8 @@
 
                                 <!-- menu -->
                                 <ul class="absolute w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8">
-                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item 1</a></li>
-                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item 1</a></li>
+                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Mark as Spam</a></li>
+                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Delete Post</a></li>
                                 </ul>
                             </button>
                         </div>
@@ -215,8 +227,8 @@
 
                                 <!-- menu -->
                                 <ul class="absolute w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8">
-                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item 1</a></li>
-                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item 1</a></li>
+                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Mark as Spam</a></li>
+                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Delete Post</a></li>
                                 </ul>
                             </button>
                         </div>
@@ -264,8 +276,8 @@
 
                                 <!-- menu -->
                                 <ul class="absolute w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8">
-                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item 1</a></li>
-                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item 1</a></li>
+                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Mark as Spam</a></li>
+                                    <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Delete Post</a></li>
                                 </ul>
                             </button>
                         </div>

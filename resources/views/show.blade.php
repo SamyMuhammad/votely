@@ -45,14 +45,15 @@
                             </svg>
 
                             <!-- menu -->
-                            <ul
-                                class="hidden absolute w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8">
+                            <ul x-cloak x-show="isOpened" x-transition.origin.top.left.duration.500ms
+                                @click.away="isOpened = false" @keydown.escape.window="isOpened = false"
+                                class="absolute z-10 w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8">
                                 <li><a href="#"
-                                        class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item
-                                        1</a></li>
+                                        class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Mark
+                                        as Spam</a></li>
                                 <li><a href="#"
-                                        class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item
-                                        1</a></li>
+                                        class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Delete
+                                        Post</a></li>
                             </ul>
                         </button>
                     </div>
@@ -63,16 +64,17 @@
 
     <div class="buttons-container flex items-center justify-between mt-5">
         <div class="flex items-center space-x-4 ml-6">
-            <div class="relative">
-                <button type="button"
+            <div x-data="{ isOpened: false }" class="relative">
+                <button @click="isOpened = !isOpened" type="button"
                     class="flex items-center justify-center w-32 h-11 text-xs text-center bg-blue-600
                     font-semibold rounded-xl text-white border border-blue-500 hover:border-blue-900
                     transition duration-150 ease-in px-6 py-3">
                     Reply
                 </button>
 
-                <div
-                    class="hidden absolute bg-white z-10 w-104 font-semibold text-left text-sm shadow-md shadow-gray-600 rounded-xl mt-2 px-5">
+                <div x-cloak x-show="isOpened" x-transition.origin.top.left.duration.500ms
+                    @click.away="isOpened = false" @keydown.escape.window="isOpened = false"
+                    class="absolute bg-white z-10 w-104 font-semibold text-left text-sm shadow-md shadow-gray-600 rounded-xl mt-2 px-5">
                     <form action="#" class="space-y-4 px-4 py-6">
                         <div>
                             <textarea name="post_comment" id="post_comment" cols="30" rows="4"
@@ -105,8 +107,8 @@
                 </div>
             </div>
 
-            <div class="relative">
-                <button type="button"
+            <div x-data="{ isOpened: false }" class="relative">
+                <button @click="isOpened = !isOpened" type="button"
                     class="flex items-center justify-center w-36 h-11 text-xs bg-gray-200
                         font-semibold rounded-xl border border-gray-200 hover:border-gray-400
                         transition duration-150 ease-in px-6 py-3">
@@ -117,7 +119,8 @@
                     </svg>
                 </button>
 
-                <div
+                <div x-cloak x-show="isOpened" x-transition.origin.top.left.duration.500ms
+                    @click.away="isOpened = false" @keydown.escape.window="isOpened = false"
                     class="absolute bg-white z-20 w-76 font-semibold text-left text-sm shadow-md shadow-gray-600 rounded-xl mt-2 px-5">
                     <form action="#" class="space-y-4 px-4 py-6">
                         <div class="space-y-2">
@@ -165,18 +168,20 @@
                         </div>
 
                         <div class="flex items-center justify-between space-x-3">
-                            <button type="button" 
+                            <button type="button"
                                 class="flex items-center justify-center w-1/2 h-11 text-xs bg-gray-200
                                 font-semibold rounded-xl border border-gray-200 hover:border-gray-400
                                 transition duration-150 ease-in px-6 py-3">
 
-                                <svg class="w-4 text-gray-600 -rotate-45" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13" />
+                                <svg class="w-4 text-gray-600 -rotate-45" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13" />
                                 </svg>
                                 <span class="ml-1">Attach</span>
                             </button>
-                            
-                            <button type="submit" 
+
+                            <button type="submit"
                                 class="flex items-center justify-center w-1/2 h-11 text-xs text-center bg-blue-600
                                 font-semibold rounded-xl text-white border border-blue-500 hover:border-blue-900
                                 transition duration-150 ease-in px-6 py-3">
@@ -187,7 +192,7 @@
                         <div>
                             <label class="inline-flex items-center font-normal">
                                 <input type="checkbox" name="notify_voters" id="notify_voters" checked
-                                class="rounded bg-gray-200">
+                                    class="rounded bg-gray-200">
                                 <span class="ml-2">Notify all voters</span>
                             </label>
                         </div>
@@ -231,8 +236,8 @@
                             <span>10 hours ago</span>
                         </div>
 
-                        <div class="flex items-center justify-between space-x-2">
-                            <button type="button"
+                        <div x-data="{ isOpened: false }" class="flex items-center justify-between space-x-2">
+                            <button type="button" @click="isOpened = !isOpened"
                                 class="relative font-bold bg-gray-100 hover:bg-gray-200 transition duration-150 ease-in text-center text-sm leading-none h-7 rounded-full border py-2 px-4">
                                 <svg fill="currentColor" width="24" height="6">
                                     <path
@@ -241,14 +246,15 @@
                                 </svg>
 
                                 <!-- menu -->
-                                <ul
-                                    class="hidden absolute w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8">
+                                <ul x-cloak x-show="isOpened" x-transition.origin.top.left.duration.500ms
+                                    @click.away="isOpened = false" @keydown.escape.window="isOpened = false"
+                                    class="absolute z-10 w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8">
                                     <li><a href="#"
-                                            class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item
-                                            1</a></li>
+                                            class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Mark
+                                            as Spam</a></li>
                                     <li><a href="#"
-                                            class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item
-                                            1</a></li>
+                                            class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Delete
+                                            Post</a></li>
                                 </ul>
                             </button>
                         </div>
@@ -279,8 +285,8 @@
                             <span>10 hours ago</span>
                         </div>
 
-                        <div class="flex items-center justify-between space-x-2">
-                            <button type="button"
+                        <div x-data="{ isOpened: false }" class="flex items-center justify-between space-x-2">
+                            <button @click="isOpened = !isOpened" type="button"
                                 class="relative font-bold bg-gray-100 hover:bg-gray-200 transition duration-150 ease-in text-center text-sm leading-none h-7 rounded-full border py-2 px-4">
                                 <svg fill="currentColor" width="24" height="6">
                                     <path
@@ -289,14 +295,15 @@
                                 </svg>
 
                                 <!-- menu -->
-                                <ul
-                                    class="hidden absolute w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8">
+                                <ul x-cloak x-show="isOpened" x-transition.origin.top.left.duration.500ms
+                                    @click.away="isOpened = false" @keydown.escape.window="isOpened = false"
+                                    class="absolute z-10 w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8">
                                     <li><a href="#"
-                                            class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item
-                                            1</a></li>
+                                            class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Mark
+                                            as Spam</a></li>
                                     <li><a href="#"
-                                            class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item
-                                            1</a></li>
+                                            class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Delete
+                                            Post</a></li>
                                 </ul>
                             </button>
                         </div>
@@ -323,8 +330,8 @@
                             <span>10 hours ago</span>
                         </div>
 
-                        <div class="flex items-center justify-between space-x-2">
-                            <button type="button"
+                        <div x-data="{ isOpened: false }" class="flex items-center justify-between space-x-2">
+                            <button @click="isOpened = !isOpened" type="button"
                                 class="relative font-bold bg-gray-100 hover:bg-gray-200 transition duration-150 ease-in text-center text-sm leading-none h-7 rounded-full border py-2 px-4">
                                 <svg fill="currentColor" width="24" height="6">
                                     <path
@@ -333,14 +340,15 @@
                                 </svg>
 
                                 <!-- menu -->
-                                <ul
-                                    class="hidden absolute w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8">
+                                <ul x-cloak x-show="isOpened" x-transition.origin.top.left.duration.500ms
+                                    @click.away="isOpened = false" @keydown.escape.window="isOpened = false"
+                                    class="absolute z-10 w-44 text-left bg-white font-semibold py-3 rounded-xl shadow-lg ml-8">
                                     <li><a href="#"
-                                            class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item
-                                            1</a></li>
+                                            class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Mark
+                                            as Spam</a></li>
                                     <li><a href="#"
-                                            class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">item
-                                            1</a></li>
+                                            class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Delete
+                                            Post</a></li>
                                 </ul>
                             </button>
                         </div>
