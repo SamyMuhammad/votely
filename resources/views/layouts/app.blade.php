@@ -15,12 +15,12 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans bg-gray-background text-gray-900 text-sm">
-        <header class="flex items-center justify-between px-8 py-4">
+        <header class="flex flex-col md:flex-row items-center justify-between px-8 py-4">
             <a href="#">
                 <img src="{{ asset('assets/images/logoipsum-241.svg') }}" alt="votely-logo" />
             </a>
             
-            <div class="flex items-center">
+            <div class="flex mt-2 md:mt-0 items-center">
                 @if (Route::has('login'))
                     <div class="p-6 text-right">
                         @auth
@@ -50,9 +50,9 @@
             </div>
         </header>
 
-        <main class="container mx-auto max-w-custom flex">
-            <div class="w-[280px] mr-5">
-                <div class="border-2 border-blue rounded-xl mt-16 bg-white">
+        <main class="container mx-auto max-w-custom flex flex-col md:flex-row">
+            <div class="w-[280px] mx-auto md:mx-0 md:mr-5">
+                <div class="md:sticky md:top-5 border-2 border-blue rounded-xl mt-16 bg-white">
                     <div class="text-center pt-5 py-6">
                         <h3 class="font-semibold text-base">Add an idea</h3>
                         <p class="text-xs mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, pariatur!</p>
@@ -101,8 +101,8 @@
                 </div>
             </div> <!-- end: side form -->
 
-            <div class="w-[700px]">
-                <nav class="flex items-center justify-between text-xs">
+            <div class="w-full md:w-[700px] px-2 md:px-0">
+                <nav class="hidden md:flex items-center justify-between text-xs">
                     <ul class="flex uppercase font-semibold space-x-10 border-b-4 pb-3 rounded-sm">
                         <li><a href="#" class="border-b-4 pb-3 border-custom-blue rounded-sm">All Ideas (55)</a></li>
                         <li><a href="#" class="text-gray-400 border-b-4 pb-3 rounded-sm hover:border-custom-blue transition duration-150 ease-in">Considering (6)</a></li>
