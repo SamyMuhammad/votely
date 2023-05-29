@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IdeaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'index');
-
-Route::view('/idea', 'show');
+Route::get('/', [IdeaController::class, 'index'])->name('idea.index');
+Route::get('ideas/{idea}', [IdeaController::class, 'show'])->name('idea.show');
 
 /* Route::get('/dashboard', function () {
     return view('dashboard');

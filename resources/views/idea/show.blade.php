@@ -17,15 +17,14 @@
             </div>
             <div class="w-full mx-2 md:mx-4">
                 <h4 class="text-xl font-semibld">
-                    <a href="#" class="hover:underline">A rondom title goes here</a>
+                    <a href="#" class="hover:underline">{{ $idea->title }}</a>
                 </h4>
-                <div class="text-gray-600 mt-2 line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit.</div>
+                <div class="text-gray-600 mt-2 line-clamp-3">{{ $idea->description }}</div>
                 <div class="flex flex-col md:flex-row md:items-center justify-between mt-4">
                     <div class="flex items-center space-x-2 md:justify-between text-xs font-semibold text-gray-400">
-                        <span class="font-bold text-gray-900">John Doe</span>
+                        <span class="font-bold text-gray-900">{{ $idea->user->name }}</span>
                         <span>&bullet;</span>
-                        <span>10 hours ago</span>
+                        <span>{{ $idea->created_at?->diffForHumans() }}</span>
                         <span>&bullet;</span>
                         <span>Category</span>
                         <span>&bullet;</span>
