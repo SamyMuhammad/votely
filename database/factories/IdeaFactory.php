@@ -17,11 +17,9 @@ class IdeaFactory extends Factory
      */
     public function definition(): array
     {
-        $str = str(fake()->words(4, true));
         return [
             "user_id" => User::factory(),
-            "title" => $str->title(),
-            "slug" => $str->slug(),
+            "title" => fake()->words(4, true),
             "description" => fake()->paragraph(5),
         ];
     }

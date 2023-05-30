@@ -111,4 +111,8 @@
             </div> <!-- end:card -->
         @endforeach
     </div><!-- end ideas container -->
+
+    <div class="my-8">
+        {!! $ideas->render() !!}
+    </div>
 </x-app-layout>
