@@ -31,7 +31,13 @@
 
     <div class="ideas-container space-y-6 my-6">
         @foreach ($ideas as $idea)
-            <div
+            <div 
+                x-data
+                @click="const target = $event.target.tagName.toLowerCase()
+                    if (!['a', 'button', 'svg', 'path'].includes(target)) {
+                        $refs.link.click()
+                    }
+                "
                 class="idea-container hover:shadow-md transition duration-150 ease-in cursor-pointer bg-white rounded-xl flex">
                 <div class="hidden md:block border-r boreder-gray-100 px-5 py-8">
                     <div class="text-center">
@@ -55,7 +61,7 @@
                     </div>
                     <div class="w-full flex flex-col justify-between mx-4">
                         <h4 class="text-xl font-semibld mt-2 md:mt-0">
-                            <a href="{{ route('idea.show', $idea) }}" class="hover:underline">{{ $idea->title }}</a>
+                            <a x-ref="link" href="{{ route('idea.show', $idea) }}" class="idea-anchor hover:underline">{{ $idea->title }}</a>
                         </h4>
                         <div class="text-gray-600 mt-2 line-clamp-3">{{ $idea->description }}</div>
                         <div class="flex flex-col md:flex-row md:items-center justify-between mt-6">
