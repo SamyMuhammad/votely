@@ -43,6 +43,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function getAvatar()
+    {
+        // $default = 'https://ui-avatars.com/api/?size=200&name=Jhon' . $this->name;
+        // return 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($this->email))) . '?d=' . urlencode($default) . '&s=200';
+
+        return 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($this->email))) . '?d=robohash&s=200';
+    }
+
     public function ideas(): HasMany
     {
         return $this->hasMany(Idea::class);
