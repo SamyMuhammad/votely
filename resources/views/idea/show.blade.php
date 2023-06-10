@@ -11,7 +11,7 @@
         <div class="flex flex-col md:flex-row flex-1 md:px-4 py-6">
             <div class="flex-none mx-2 md:mx-4">
                 <a href="#">
-                    <img src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="avatar"
+                    <img src="{{ $idea->user->getAvatar() }}" alt="avatar"
                         class="rounded-xl w-14 h-14">
                 </a>
             </div>
@@ -26,7 +26,7 @@
                         <span>&bullet;</span>
                         <span>{{ $idea->created_at?->diffForHumans() }}</span>
                         <span>&bullet;</span>
-                        <span>Category</span>
+                        <span>{{ $idea->category->name }}</span>
                         <span>&bullet;</span>
                         <span class="text-gray-900">3 Comments</span>
                     </div>

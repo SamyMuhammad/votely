@@ -69,7 +69,7 @@
                                 class="flex items-center md:justify-between space-x-2 text-xs font-semibold text-gray-400">
                                 <span>{{ $idea->created_at?->diffForHumans() }}</span>
                                 <span>&bullet;</span>
-                                <span>Category</span>
+                                <span>{{ $idea->category->name }}</span>
                                 <span>&bullet;</span>
                                 <span class="text-gray-900">3 Comments</span>
                             </div>
