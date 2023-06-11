@@ -32,9 +32,9 @@
                     </div>
 
                     <div x-data="{ isOpened: false }" class="flex items-center md:justify-between space-x-2 mt-4 md:mt-0">
-                        <div
-                            class="uppercase font-bold bg-gray-200 text-center text-xxs leading-none w-28 h-7 rounded-full py-2 px-4">
-                            open</div>
+                        <div class="{{ $idea->status->classes }} uppercase font-bold text-center text-xxs leading-none w-28 h-7 rounded-full py-2 px-4">
+                            {{ $idea->status->name }}
+                        </div>
                         <button type="button" @click="isOpened = !isOpened"
                             class="relative font-bold bg-gray-100 hover:bg-gray-200 transition duration-150 ease-in text-center text-sm leading-none h-7 rounded-full border py-2 px-4">
                             <svg fill="currentColor" width="24" height="6">

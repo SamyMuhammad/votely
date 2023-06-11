@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\Idea;
+use App\Models\Status;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -26,6 +27,27 @@ class DatabaseSeeder extends Seeder
         Category::factory()->create(['name' => 'Category 2']);
         Category::factory()->create(['name' => 'Category 3']);
         Category::factory()->create(['name' => 'Category 4']);
+
+        Status::factory()->create([
+            'name' => 'Open',
+            'classes' => 'bg-gray-200',
+        ]);
+        Status::factory()->create([
+            'name' => 'Considering',
+            'classes' => 'bg-purple-500 text-white',
+        ]);
+        Status::factory()->create([
+            'name' => 'In Progress',
+            'classes' => 'bg-yellow-500 text-white',
+        ]);
+        Status::factory()->create([
+            'name' => 'Implemented',
+            'classes' => 'bg-green-500 text-white',
+        ]);
+        Status::factory()->create([
+            'name' => 'Closed',
+            'classes' => 'bg-red-500 text-white',
+        ]);
 
         Idea::factory()->count(30)->create();
     }
