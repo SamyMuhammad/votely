@@ -8,6 +8,14 @@ module.exports = {
         './resources/views/**/*.blade.php',
     ],
 
+    safelist: [
+        'bg-red-500',
+        'bg-yellow-500',
+        'bg-purple-500',
+        'bg-green-500',
+        'bg-gray-500',
+    ],
+
     theme: {
         extend: {
             colors: ({ colors }) => ({
@@ -16,13 +24,13 @@ module.exports = {
                 black: colors.black,
                 white: colors.white,
                 gray: colors.gray,
-                'gray-background' : '#f7f8fc',
+                'gray-background': '#f7f8fc',
                 'custom-blue': '#328af1',
                 'custom-blue-hover': '#2879bd',
-                'custom-yellow' : '#ffc73c',
-                'custom-red' : '#ec454f',
-                'custom-green' : '#1aab8b',
-                'custom-purple' : '#8b60ed',
+                'custom-yellow': '#ffc73c',
+                'custom-red': '#ec454f',
+                'custom-green': '#1aab8b',
+                'custom-purple': '#8b60ed',
             }),
             maxWidth: {
                 custom: '68.5rem',
