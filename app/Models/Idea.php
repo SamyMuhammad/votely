@@ -14,6 +14,7 @@ class Idea extends Model
     protected $fillable = [
         "user_id",
         "category_id",
+        "status_id",
         "title",
         "slug",
         "description",

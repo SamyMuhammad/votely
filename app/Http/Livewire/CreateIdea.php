@@ -28,6 +28,10 @@ class CreateIdea extends Component
             'status_id' => 1,
             'description' => $this->description,
         ]);
+
+        session()->flash('success_message', 'Idea Created Successfully!');
+        $this->reset();
+        return redirect()->route('idea.index');
     }
 
     public function render()

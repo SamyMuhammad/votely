@@ -1,6 +1,6 @@
 <form wire:submit.prevent='createIdea' action="#" method="POST" class="space-y-4 px-4 py-6">
     <div>
-        <input wire:model.defer='title' type="text"
+        <input wire:model.defer='title' type="text" name="title"
             class="w-full text-sm bg-gray-100 border-none rounded-xl
             placeholder-gray-900 px-4 py-2"
             placeholder="Your Idea">
@@ -40,5 +40,21 @@
                 transition duration-150 ease-in px-6 py-3">
             <span class="ml-1">Submit</span>
         </button>
+    </div>
+
+    <div>
+        @if (session()->has('success_message'))
+            <div class="text-green-600 mt-4"
+                x-data="{ isVisible: true }"
+                x-init="
+                    setTimeout(() => {
+                        isVisible= false;
+                    }, 5000);
+                "
+                x-show.transition.duration.100ms="isVisible"
+            >
+                {{ session('success_message') }}
+            </div>
+        @endif
     </div>
 </form>
