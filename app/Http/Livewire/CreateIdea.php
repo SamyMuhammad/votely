@@ -20,7 +20,7 @@ class CreateIdea extends Component
 
     public function createIdea()
     {
-        // $this->validate();
+        $this->validate();
         Idea::create([
             'user_id' => auth()->id(),
             'title' => $this->title,

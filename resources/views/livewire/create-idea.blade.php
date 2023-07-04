@@ -3,21 +3,31 @@
         <input wire:model.defer='title' type="text" name="title"
             class="w-full text-sm bg-gray-100 border-none rounded-xl
             placeholder-gray-900 px-4 py-2"
-            placeholder="Your Idea">
+            placeholder="Your Idea" required>
+        @error('title')
+            <small class="text-red-500 text-sm">{{ $message }}</small>
+        @enderror
     </div>
 
     <div>
-        <select wire:model.defer='category' name="add_category" id="add_category" class="w-full rounded-xl px-4 py-2 border-none bg-gray-100 text-sm">
+        <select wire:model.defer='category' name="add_category" id="add_category"
+            class="w-full rounded-xl px-4 py-2 border-none bg-gray-100 text-sm" required>
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
         </select>
+        @error('category')
+            <small class="text-red-500 text-sm">{{ $message }}</small>
+        @enderror
     </div>
 
     <div>
         <textarea wire:model.defer='description' name="idea" id="idea" cols="30" rows="4"
             class="w-full bg-gray-100 rounded-xl border-none
-            text-sm" placeholder="Write your idea"></textarea>
+            text-sm" placeholder="Write your idea" required></textarea>
+        @error('description')
+            <small class="text-red-500 text-sm">{{ $message }}</small>
+        @enderror
     </div>
 
     <div class="flex items-center justify-between space-x-3">
@@ -44,15 +54,10 @@
 
     <div>
         @if (session()->has('success_message'))
-            <div class="text-green-600 mt-4"
-                x-data="{ isVisible: true }"
-                x-init="
-                    setTimeout(() => {
-                        isVisible= false;
-                    }, 5000);
-                "
-                x-show.transition.duration.100ms="isVisible"
-            >
+            <div class="text-green-600 mt-4" x-data="{ isVisible: true }" x-init="setTimeout(() => {
+                isVisible = false;
+            }, 5000);"
+                x-show.transition.duration.100ms="isVisible">
                 {{ session('success_message') }}
             </div>
         @endif
