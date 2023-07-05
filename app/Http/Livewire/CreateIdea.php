@@ -9,7 +9,7 @@ use Livewire\Component;
 class CreateIdea extends Component
 {
     public $title;
-    public $category = 1;
+    public $category;
     public $description;
 
     protected $rules = [
